@@ -1,14 +1,9 @@
-group 'lib'
-version '1.0-SNAPSHOT'
-
 buildscript {
-    ext.kotlin_version = '1.2.10'
-
     repositories {
         mavenCentral()
     }
     dependencies {
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
     }
 }
 
@@ -18,9 +13,13 @@ repositories {
     mavenCentral()
 }
 
+sourceSets {
+    main.kotlin.srcDirs = ['src/kotlin']
+}
+
 dependencies {
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jre8:$kotlin_version"
-    implementation 'io.reactivex.rxjava2:rxjava:2.1.5'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion"
+    implementation "io.reactivex.rxjava2:rxjava:$rxJavaVersion"
 }
 
 compileKotlin {
