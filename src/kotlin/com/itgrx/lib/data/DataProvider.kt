@@ -1,8 +1,8 @@
-package com.itgrx.lib.dataprovider
+package com.itgrx.lib.data
 
 import io.reactivex.Observable
 
-interface DataProvider<T> : List<T> {
+interface DataProvider {
 
     interface Event
 
