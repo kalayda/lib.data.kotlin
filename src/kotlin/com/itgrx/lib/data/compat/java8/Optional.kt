@@ -78,7 +78,7 @@ class Optional<T> private constructor(x: T, y: Null?) : Union<T, Optional.Null>(
         return if (!isPresent) {
             empty()
         } else {
-            Optional.ofNullable(mapper.apply(get()) as U)
+            Optional.ofNullable(mapper.apply(get()))
         }
     }
 
